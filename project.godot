@@ -13,3 +13,11 @@ config_version=5
 config/name="Juego_3d_Godot"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "green",
+"res://Scenes/": "orange",
+"res://Scripts/": "red"
+}
