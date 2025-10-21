@@ -24,3 +24,10 @@ skeleton = NodePath("../CollisionShape3D")
 transform = Transform3D(-0.6455932, 0.76129484, -0.060327813, -0.49860254, -0.36035058, 0.7883798, 0.57845056, 0.53905225, 0.6122235, -0.38250446, 34.884544, 0.15928268)
 
 [node name="Player" parent="." instance=ExtResource("1_r150o")]
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 10, 10)
+projection = 1
+size = 19.0
