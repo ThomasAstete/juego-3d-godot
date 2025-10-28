@@ -24,7 +24,7 @@ _data = {
 }
 point_count = 4
 
-[node name="Main" type="Node3D" groups=["mob"]]
+[node name="Main" type="Node3D"]
 script = ExtResource("1_kln2b")
 mob_scene = ExtResource("2_rgh2o")
 
