@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var max_speed = 18
 
 signal squashed
+
 func _physics_process(_delta):
 	move_and_slide()
 
@@ -17,7 +18,7 @@ func initialize(start_position, player_position):
 	
 	$AnimationPlayer.speed_scale = random_speed / min_speed
 
-func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
+func _on_visible_on_screen_notifier_3d_screen_exited():
 	queue_free()
 
 func squash():

@@ -13,7 +13,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Character:position")
+tracks/0/path = NodePath("Pivot/mob:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/Character:rotation")
+tracks/1/path = NodePath("Pivot/mob:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -48,6 +48,7 @@ script = ExtResource("1_u8nqw")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="mob" parent="Pivot" instance=ExtResource("2_b44se")]
+transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0.35, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
@@ -60,5 +61,6 @@ aabb = AABB(-1.25, -0.25, -1.35, 2.5, 1.2, 3.3)
 libraries = {
 &"": SubResource("AnimationLibrary_e2krv")
 }
+autoplay = "float"
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
