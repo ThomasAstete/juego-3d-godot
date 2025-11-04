@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Juego_3d_Godot"
+run/main_scene="uid://cwus0mpguw1f"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+MusicPlayer="*res://Scenes/Music_player.tscn"
 
 [display]
 
