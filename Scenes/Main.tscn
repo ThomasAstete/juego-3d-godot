@@ -1,10 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwus0mpguw1f"]
+[gd_scene load_steps=15 format=3 uid="uid://cwus0mpguw1f"]
 
 [ext_resource type="Script" uid="uid://babbbnala8wib" path="res://Scripts/main.gd" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://b0axqhpp5uhdq" path="res://Scenes/Player.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://chd0r7wsjew7k" path="res://Scenes/Mob.tscn" id="2_rgh2o"]
 [ext_resource type="FontFile" uid="uid://6bqnxu86fhwi" path="res://Assets/Fonts/Montserrat-Medium.ttf" id="4_pbw6q"]
 [ext_resource type="Script" uid="uid://cli8uot7elupw" path="res://Scripts/score_label.gd" id="5_v1gob"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pbw6q"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_v1gob"]
+sky_material = SubResource("ProceduralSkyMaterial_pbw6q")
+
+[sub_resource type="Environment" id="Environment_jw32o"]
+background_mode = 2
+sky = SubResource("Sky_v1gob")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c1w88"]
 size = Vector3(60, 2, 60)
@@ -34,6 +47,9 @@ default_font_size = 22
 script = ExtResource("1_kln2b")
 mob_scene = ExtResource("2_rgh2o")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jw32o")
+
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 collision_layer = 4
@@ -52,10 +68,10 @@ transform = Transform3D(-0.6455932, 0.76129484, -0.060327813, -0.49860254, -0.36
 [node name="Player" parent="." instance=ExtResource("1_r150o")]
 
 [node name="CameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.96959937, 0.2446982, 0, -0.2446982, 0.96959937, 0, 9.884502, 10.115501)
+transform = Transform3D(1, 0, 0, 0, 0.7671651, 0.64144963, 0, -0.64144963, 0.7671651, 0, 9.884502, 10.115501)
 projection = 1
 size = 19.0
 
